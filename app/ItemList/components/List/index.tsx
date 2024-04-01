@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAllItems, deleteItem } from "../../../lib/services/itemsService";
+import { getAllItems, deleteItem } from "../../../lib/services/items/service";
 import ListItem from "./ListItem";
 import { List as ListUI } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";

@@ -1,5 +1,5 @@
 import NavButton from "../../shared/NavButton";
-import { getItemById } from "../../lib/services/itemsService";
+import { getItemById } from "../../lib/services/items/service";
 import { redirect } from "next/navigation";
 
 interface IProps {
