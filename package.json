@@ -1,5 +1,5 @@
 {
-  "name": "seed-project2",
+  "name": "lottery-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,11 +13,24 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@mantine/carousel": "^7.7.1",
+    "@mantine/core": "^7.7.1",
+    "@mantine/dates": "^7.7.1",
+    "@mantine/form": "^7.7.1",
+    "@mantine/hooks": "^7.7.1",
+    "@mantine/modals": "^7.7.1",
+    "@mantine/notifications": "^7.7.1",
+    "@mantine/nprogress": "^7.7.1",
+    "@mantinex/mantine-logo": "^1.0.1",
+    "@tabler/icons-react": "^3.2.0",
     "axios": "^1.6.8",
+    "ethers": "^6.11.1",
     "framer-motion": "^11.0.24",
     "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-countdown": "^2.3.5",
+    "react-dom": "^18",
+    "react-qr-code": "^2.0.12"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -26,7 +39,9 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
-    "postcss": "^8",
+    "postcss": "^8.4.38",
+    "postcss-preset-mantine": "^1.14.0",
+    "postcss-simple-vars": "^7.0.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
