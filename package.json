@@ -1,6 +1,7 @@
 {
   "name": "lottery-project",
   "version": "0.1.0",
+  "author": "Tal Waserman",
   "private": true,
   "scripts": {
     "dev": "next dev",
