@@ -27,5 +27,5 @@ export const getDigits = (number: number | string) => {
 };
 
 export const isLotteryStillLive = (date: Date): boolean => {
-  return date.getTime() > (new Date()).getTime();
+  return date.getTime() > Date.now();
 }

@@ -4,7 +4,9 @@
   "author": "Tal Waserman",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:development": "cross-env NODE_ENV=development next dev",
+    "dev:test": "cross-env NODE_ENV=test next dev",
+    "dev:prod": "cross-env NODE_ENV=production next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -25,6 +27,8 @@
     "@mantinex/mantine-logo": "^1.0.1",
     "@tabler/icons-react": "^3.2.0",
     "axios": "^1.6.8",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "ethers": "^6.11.1",
     "framer-motion": "^11.0.24",
     "next": "14.1.4",

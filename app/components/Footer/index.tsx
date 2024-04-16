@@ -5,7 +5,7 @@ import classes from "./Footer.module.css";
 
 const links = [
   { link: "https://www.linkedin.com/in/talwaserman/", label: "Linkedin" },
-  { link: "#", label: "Block explorer" },
+  { link: "https://sepolia.etherscan.io/address/0xD56b722262Ae87610B1E8E306351407e962b9037", label: "Block explorer" },
 ];
 
 export default function Footer() {

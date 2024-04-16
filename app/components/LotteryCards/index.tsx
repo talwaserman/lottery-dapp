@@ -30,6 +30,8 @@ export default function LotteryCards({openJoin}: IProps) {
       getLotteries();
     }
   }, [contractInterface, connectedAccount]);
+  if (!lotteries) return null;
+  
   return (
     <div className="flex mx-4 gap-5 flex-wrap justify-start">
       {lotteries.map((lottery: any) => (

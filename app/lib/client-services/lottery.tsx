@@ -1,21 +1,41 @@
 "use client";
 import { ethers } from "ethers";
+require("dotenv").config();
+const contractJSON = require("../../../lottery-hardhat/artifacts/contracts/Lottery.sol/Lottery.json"); 
+interface ContractAddresses {
+  [key: string]: string;
+}
 
-const contractJSON = require("../../../hardhat/artifacts/contracts/Lottery.sol/Lottery.json");
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const contractAddress: ContractAddresses = {
+  'development': process.env.lottery_eth_localhost_contract_address || '',
+  'test': process.env.lottery_eth_sepolia_contract_address || '',
+  'prod': ''
+};
+const webSocketProvider = process.env.lottery_eth_sepolia_webSocketProvider || '';
 
 export default class ContractInterface {
   private contract: any;
   private signer: any;
   private provider: any;
+  private wsProvider: any;
+
   
-  constructor() {
-  }
+  constructor() {}
 
   public async init() {
+    const cAddress = contractAddress[process.env.my_env || 'test'];
     this.provider = new ethers.BrowserProvider((window as any).ethereum);
     this.signer = await this.provider.getSigner();
-    this.contract = new ethers.Contract(contractAddress, contractJSON.abi, this.signer);
+    this.contract = new ethers.Contract(cAddress, contractJSON.abi, this.signer);
+    const ws = new ethers.WebSocketProvider(webSocketProvider);
+    if (ws) {
+      this.wsProvider = new ethers.Contract(cAddress, contractJSON.abi, ws);
+    }
+    console.log('env:' , process.env.my_env);
+  }
+
+  public getWebSocket() {
+    return this.wsProvider;
   }
 
   public getSignerAddress() {
@@ -35,7 +55,7 @@ export default class ContractInterface {
       }));
      
     } catch (err: any) {
-      alert(err.reason);
+      err.reason && alert(err.reason);
     }
   }
 
@@ -43,7 +63,7 @@ export default class ContractInterface {
     try {
       await this.contract.createNewLottery(startTime, endTime, winningNumbers, limitJoiners, chainType, {value: prize});
     } catch(err: any) {
-      alert(err.reason);
+      err.reason && alert(err.reason);
     }
   }
 
@@ -54,5 +74,4 @@ export default class ContractInterface {
       alert(err.reason);
     }
   }
-
 }
