@@ -7,9 +7,10 @@ interface ContractAddresses {
 }
 
 const contractAddress: ContractAddresses = {
-  'development': process.env.lottery_eth_localhost_contract_address || '',
-  'test': process.env.lottery_eth_sepolia_contract_address || '',
-  'prod': ''
+  'Localhost': process.env.lottery_eth_localhost_contract_address || '',
+  'Development': process.env.lottery_eth_sepolia_contract_address || '',
+  'Preview': process.env.lottery_eth_sepolia_contract_address || '',
+  'Production': ''
 };
 const webSocketProvider = process.env.lottery_eth_sepolia_webSocketProvider || '';
 
