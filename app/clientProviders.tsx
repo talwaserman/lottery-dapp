@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
-import ContractInterface from "./lib/client-services/lottery";
+import ContractInterface from "./lib/client-services/lotteryContract/lottery";
 import {
   getCurrentWalletConnected,
   connectWallet,

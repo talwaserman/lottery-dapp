@@ -1,0 +1,342 @@
+{
+    "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "payable",
+          "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "closeTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "emitLotteryCreated",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "joinerAddress",
+              "type": "address"
+            }
+          ],
+          "name": "emitLotteryJoined",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "checkIfIWonTheLottery",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "checkIfLotteryIsLiveById",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "checkLotteryPrize",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "startTimeInSeconds",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "endTimeInSeconds",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "winingNumbers",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "limitOfJoiners",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "chainType",
+              "type": "string"
+            }
+          ],
+          "name": "createNewLottery",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getAllFunds",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getContractBalance",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getLotteries",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "winningPrize",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "startTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "closeTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "joinedCounter",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "chainType",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Lottery.LottryContestLite[]",
+              "name": "",
+              "type": "tuple[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getLotteryPrize",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getNumberOfJoinersForLotteryId",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getUserTicketForLottery",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lotteryId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256[]",
+                  "name": "numbers",
+                  "type": "uint256[]"
+                }
+              ],
+              "internalType": "struct Lottery.LotteryTicket",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getUserTickets",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "lotteryId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "numbers",
+              "type": "uint256[]"
+            }
+          ],
+          "name": "joinLottery",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lotteryId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256[]",
+                  "name": "numbers",
+                  "type": "uint256[]"
+                }
+              ],
+              "internalType": "struct Lottery.LotteryTicket",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function"
+        }
+      ]
+}

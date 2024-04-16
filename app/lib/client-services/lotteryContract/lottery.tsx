@@ -1,7 +1,7 @@
 "use client";
 import { ethers } from "ethers";
 require("dotenv").config();
-const contractJSON = require("../../../lottery-hardhat/artifacts/contracts/Lottery.sol/Lottery.json"); 
+const contractJSON = require("./abi.json"); 
 interface ContractAddresses {
   [key: string]: string;
 }
