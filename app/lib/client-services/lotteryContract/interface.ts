@@ -7,4 +7,4 @@ export interface ILotteryCard {
     closeTime: Date;
     joinedCounter: number;
     chainType: string;
-}∏
+}

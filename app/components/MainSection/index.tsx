@@ -24,14 +24,14 @@ export default function MainSection() {
       console.log("event: ", event.log.args);
     };
 
-    if (initialized) {
+    if (initialized && !contractWebSocket) {
       const contractWebSocket = contractInterface.getWebSocket();
       setContractWebSocket(contractWebSocket);
       contractWebSocket.on("*", wsListener)
     }
     return () => contractWebSocket && contractWebSocket.off("*", wsListener);
 
-  }, [initialized, contractInterface]);
+  }, [initialized, contractInterface, contractWebSocket]);
 
   return (
     <div>
