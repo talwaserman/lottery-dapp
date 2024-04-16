@@ -37,14 +37,14 @@ export default function LotteryCard({
       </Card.Section>
 
       <Group justify="space-between" mt="md">
-        <Text fw={500}>{`Prize: ${ethers.formatEther(winningPrize)} ETH`}</Text>
+        <Text fw={500}>{`Prize: ${ethers.formatEther(winningPrize.toString())} ETH`}</Text>
         <Badge variant="outline" color={isLive ? "green" : "red"}>
           {isLive ? "Live" : "Ended"}
         </Badge>
       </Group>
       {ethPrice && (
         <Text fw={500}>
-          ${(ethPrice * Number(ethers.formatEther(winningPrize))).toFixed(2)}
+          ${(ethPrice * Number(ethers.formatEther(winningPrize.toString()))).toFixed(2)}
         </Text>
       )}
 

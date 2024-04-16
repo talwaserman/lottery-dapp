@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Crypto Lottery DApp - for creation of lotteries
+
+This DApp was created with nextJS, react, hardhat to enable users to interact with smart contracts that were deployed the blockchain.
+
+This DApp was developed by Tal Waserman.
 
 ## Getting Started
 
