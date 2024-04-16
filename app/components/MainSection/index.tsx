@@ -31,7 +31,7 @@ export default function MainSection() {
     }
     return () => contractWebSocket && contractWebSocket.off("*", wsListener);
 
-  }, [initialized]);
+  }, [initialized, contractInterface]);
 
   return (
     <div>

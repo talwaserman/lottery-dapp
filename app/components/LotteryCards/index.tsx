@@ -25,11 +25,11 @@ export default function LotteryCards({openJoin}: IProps) {
       setEthPrice(await getEthPrice());
     }
 
-    if (initialized) {
+    if (initialized && connectedAccount) {
       getCurrentEthPrice();
       getLotteries();
     }
-  }, [contractInterface, connectedAccount]);
+  }, [contractInterface, connectedAccount, initialized]);
   if (!lotteries) return null;
   
   return (
