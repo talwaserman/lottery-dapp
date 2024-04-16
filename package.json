@@ -4,10 +4,10 @@
   "author": "Tal Waserman",
   "private": true,
   "scripts": {
-    "dev:local": "cross-env NODE_ENV=Localhost next dev",
-    "dev:development": "cross-env NODE_ENV=Development next dev",
-    "dev:test": "cross-env NODE_ENV=Preview next dev",
-    "dev:prod": "cross-env NODE_ENV=Production next dev",
+    "dev:local": "cross-env WORKING_ENV=Localhost next dev",
+    "dev:development": "cross-env WORKING_ENV=Development next dev",
+    "dev:test": "cross-env WORKING_ENV=Preview next dev",
+    "dev:prod": "cross-env WORKING_ENV=Production next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

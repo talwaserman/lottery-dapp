@@ -6,7 +6,7 @@ const nextConfig = {
         lottery_eth_sepolia_contract_address: process.env.lottery_eth_sepolia_contract_address,
         lottery_eth_sepolia_webSocketProvider: process.env.lottery_eth_sepolia_webSocketProvider,
         lottery_eth_sepolia_RPC_URL: process.env.lottery_eth_sepolia_RPC_URL,
-        my_env: process.env.NODE_ENV
+        my_env: process.env.WORKING_ENV
     }
 };
 
