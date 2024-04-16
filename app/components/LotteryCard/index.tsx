@@ -2,7 +2,7 @@ import { Card, Text, Group, Button, Badge } from "@mantine/core";
 import { IconCalendarDue, IconUsers } from "@tabler/icons-react";
 import QRCode from "react-qr-code";
 import classes from "./LotteryCard.module.css";
-import { ILotteryCard } from "@/app/lib/client-services/lotteryContract/interface";
+import { ILotteryCard } from "../../lib/client-services/lotteryContract/interface";
 import { formatDate, isLotteryStillLive } from "../../utils/helpers";
 import CountdownClock from "../CountdownClock";
 import { ethers } from "ethers";
