@@ -2,6 +2,7 @@
 
 import LotteryCards from "../LotteryCards";
 import JoinLottery from "../JoinLottery";
+import Hero from '../Hero';
 import { useDisclosure } from "@mantine/hooks";
 import { useContext, useEffect, useState } from "react";
 import { Container } from "@mantine/core";
@@ -35,6 +36,7 @@ export default function MainSection() {
 
   return (
     <div>
+      <Hero/>
       <Container fluid className="flex flex-row">
         <LotteryCards openJoin={openJoinWithId} />
         <JoinLottery
